@@ -1,0 +1,48 @@
+@import "../../../variables";
+
+footer{
+    width: 100%;
+    color: #999;
+    text-align: center;
+
+    .primary{
+        padding: 4rem 10%;
+        background-color: $footer-primary;
+        .logo{
+            width: 15%;
+            opacity: .6;
+        }
+    }
+    .copy{
+        padding: 2rem 0;
+        background-color: $footer-secondary;
+    }
+    a{
+        color: #999;
+        img{
+            opacity: .8;
+        }
+    }
+}
+
+@media screen and (max-width: 960px){
+    .primary{
+        text-align: center;
+
+        .logo{
+            width: 30% !important;
+        }
+        .icon{
+            width: 2rem;
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .primary{
+        text-align: center;
+
+        .logo{
+            width: 50% !important;
+        }
+    }
+}

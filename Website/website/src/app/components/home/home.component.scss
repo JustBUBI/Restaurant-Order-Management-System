@@ -1,0 +1,199 @@
+@import "../../../variables";
+
+.presentation{
+    height: 100vh;
+    background: url("../../../assets/images/bg2.jpg") no-repeat center bottom;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+
+    .spacer{
+        margin: 0 0 1.5rem 0;
+    }
+    .sub-title{
+        font-size: 1.5rem;
+        letter-spacing: .5rem;
+        line-height: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .down{
+        width: 3rem;
+        height: 4rem;
+        position: absolute;
+        bottom: 0;
+
+        &::after{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        img{
+            position: absolute;
+            width: 100%;
+        }
+    }
+}
+
+.menu{
+    min-height: 70vh;
+    padding: 3rem 20%;
+    background: url("../../../assets/images/menu.jpg") no-repeat center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+
+    p{
+        max-width: 70rem;
+        font-size: 1.25rem;
+        font-weight: lighter;
+        margin: 7rem 0;
+    }
+}
+
+.specialities{
+    width: 100%;
+    text-align: center;
+    padding: 5rem 0;
+
+    .list{
+        margin: 5rem 0;
+
+        .item{
+            width: 20%;
+            color: #303030;
+
+            .img-holder{
+                width: 100%;
+
+                img{
+                    width: 100%;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .item-title{
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            .item-description{
+                width: 80%;
+            }
+        }
+    }
+    
+    .spacer-basic{
+        background-color: $primary-dark;
+    }
+}
+
+.location{
+    min-height: 70vh;
+    color: #fff;
+    text-align: center;
+
+    .info{
+        background-color: $primary-dark;
+
+        p{
+            padding: 0 24%;
+            margin-bottom: 4rem;
+        }
+    }
+
+    .images{
+        .img-holder{
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+
+    .map{
+        background: url("../../../assets/images/mpa.png") center no-repeat;
+        background-size: cover;
+    }
+
+    .spacer-basic{
+        background-color: #fff;
+        margin: 0 0 4rem 0;
+    }
+}
+
+@media screen and (max-width: 1279px){
+    .specialities{
+        .item-description{
+            width: 70% !important;
+        }
+    }
+    .location{
+        .info{
+            padding: 2rem 1rem;
+        }
+        .images{
+            height: 30vh;
+        }
+        .map{
+            min-height: 30vh;
+        }
+    }
+}
+@media screen and (max-width: 959px){
+    .presentation{
+        padding: 0 2rem;
+        .spacer{
+            max-width: 50%;
+        }
+        .sub-title{
+            font-size: 1rem;
+        }
+    }
+    .menu{
+        padding: 3rem 2rem;
+        p{
+            width: 90% !important;
+            font-size: 1rem;
+            margin: 5rem 0;
+        }
+    }
+    .specialities{
+        .item{
+            width: 60% !important;
+            .item-title{
+                font-size: 1.5rem !important;
+            }
+        }
+    }
+    .location{
+        .info p{
+            padding: 0 10%;
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .spacer{
+        max-width: 80% !important;
+    }
+    .sub-title{
+        letter-spacing: .3rem !important;
+        line-height: 1.5rem !important;
+    }
+    .down{
+        width: 2rem !important;
+        height: 3rem !important;
+    }
+    .specialities{
+        .item{
+            width: 80% !important;
+            .img-holder{
+                width: 70% !important;
+            }
+            .item-title{
+                font-size: 1.5rem !important;
+            }
+        }
+    }
+}

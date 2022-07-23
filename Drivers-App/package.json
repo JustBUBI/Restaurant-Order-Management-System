@@ -1,0 +1,65 @@
+{
+  "name": "mobile-app-drivers",
+  "homepage":"/drivers/",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@capacitor/android": "^1.5.3",
+    "@capacitor/core": "1.5.1",
+    "@craco/craco": "^6.1.2",
+    "@ionic/pwa-elements": "^1.5.2",
+    "@ionic/react": "^5.6.8",
+    "@ionic/react-hooks": "0.0.6",
+    "@ionic/react-router": "^5.6.8",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^8.0.3",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^12.20.15",
+    "@types/react": "^16.14.8",
+    "@types/react-dom": "^16.9.13",
+    "@types/react-router": "^5.1.15",
+    "@types/react-router-dom": "^5.1.7",
+    "easy-peasy": "^3.3.1",
+    "ionicons": "^5.5.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-google-maps": "^9.4.5",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "typescript": "3.7.4"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "css:build": "npx tailwindcss build -o src/theme/main.css"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@capacitor/cli": "1.5.1",
+    "@ionic-native/core": "^5.33.1",
+    "@ionic/cli": "^6.16.3",
+    "autoprefixer": "^9.8.6",
+    "axios": "^0.19.2",
+    "oidc-client": "^1.11.5",
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4"
+  }
+}

@@ -1,0 +1,173 @@
+@import '/src/variables';
+
+.tracker{
+    width: 100%;
+    min-height: 50vh;
+    padding: 2rem 10%;
+
+    .progress-bar{
+        width: 100%;
+        height: 1rem;
+        position: relative;
+       
+        .progress-bar-states{
+            height: 50%;
+            width: calc(100% + 2rem);
+            position: absolute;
+            top: -.5rem;
+            left: -1rem;
+
+            .state{
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                position: relative;
+                &:after{
+                    content: "";
+                    width: 50%;
+                    height: 50%;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 25%;
+                    left: 25%;
+                }
+            }
+            .previous-state{
+                background-color: $tracking-previous;
+                &::after{
+                    background: url("../../../assets/images/icons/checkmark.png") no-repeat center;
+                    background-size: cover;
+                }
+            }
+            .current-state{
+                background-color: $tracking-current;
+                &::after{
+                    background: url("../../../assets/images/icons/refresh.png") no-repeat center;
+                    background-size: cover;
+                    animation: spin 2s linear infinite;
+                }
+            }
+            .done{
+                background-color: $tracking-current;
+                &::after{
+                    background: url("../../../assets/images/icons/checkmark.png") no-repeat center;
+                    background-size: cover;
+                }
+            }
+            .next-state{
+                background-color: $tracking-next;
+                &::after{
+                    background-color: #ddd;
+                }
+            }
+        }
+
+        .progress-bar-icons{
+            width: calc(100% + 5rem);
+            position: absolute;
+            top: -7rem;
+            left: -2.5rem;
+
+            .icon{
+                width: 5rem;
+                height: 5rem;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
+        .progress-bar-state-names{
+            width: calc(100% + 8rem);
+            position: absolute;
+            bottom: -5rem;
+            left: -4rem;
+
+            p{
+                width: 8rem;
+                text-align: center;
+                font-size: 1.5rem;
+            }
+            .previous-state{
+                color: $tracking-previous;
+            }
+            .current-state, .done{
+                color: $tracking-current;
+            }
+            .next-state{
+                color: $tracking-next;
+            }
+        }
+    }
+    .New{
+        background: linear-gradient(90deg, rgba(163,58,39,1) 0%, rgba(190,190,190,1) 10%, rgba(190,190,190,1) 25%, rgba(190,190,190,1) 50%, rgba(190,190,190,1) 75%, rgba(190,190,190,1) 100%);
+    }
+    .Preparing{
+        background: linear-gradient(90deg, rgba(63,63,63,1) 0%, rgba(63,63,63,1) 15%, rgba(163,58,39,1) 25%, rgba(190,190,190,1) 35%, rgba(190,190,190,1) 50%, rgba(190,190,190,1) 75%, rgba(190,190,190,1) 100%);
+    }
+    .Prepared{
+        background: linear-gradient(90deg, rgba(63,63,63,1) 0%, rgba(63,63,63,1) 25%, rgba(63,63,63,1) 35%, rgba(163,58,39,1) 50%, rgba(190,190,190,1) 65%, rgba(190,190,190,1) 75%, rgba(190,190,190,1) 100%);
+    }
+    .Delivering{
+        background: linear-gradient(90deg, rgba(63,63,63,1) 0%, rgba(63,63,63,1) 25%, rgba(63,63,63,1) 50%, rgba(63,63,63,1) 65%, rgba(163,58,39,1) 75%, rgba(190,190,190,1) 85%, rgba(190,190,190,1) 100%);
+    }
+    .Delivered{
+        background: linear-gradient(90deg, rgba(63,63,63,1) 0%, rgba(63,63,63,1) 25%, rgba(63,63,63,1) 50%, rgba(63,63,63,1) 65%, rgba(63,63,63,1) 85%, rgba(163,58,39,1) 100%);
+    }
+}
+
+@media screen and (max-width: 850px){
+    .progress-bar{
+        .progress-bar-icons{
+            width: calc(100% + 3rem) !important;
+            top: -5rem !important;
+            left: -1.5rem !important;
+
+            .icon{
+                width: 3rem !important;
+                height: 3rem !important;
+            }
+        }
+        .progress-bar-state-names{
+            width: calc(100% + 6rem) !important;
+            left: -3rem !important;
+            bottom: -4rem !important;
+            
+            p{
+                width: 6rem !important;
+                font-size: 1rem !important;
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px){
+    .tracker{
+        min-height: 100vh;
+    }
+    .progress-bar{
+        transform: rotate(90deg) scaleY(-1);
+        width: 80vh !important;
+
+        .progress-bar-states{
+            .state{
+                transform: rotate(-90deg) scaleX(-1);
+            }
+        }
+        .progress-bar-icons{
+            .icon{
+                transform: rotate(-90deg) scaleX(-1);
+            }
+        }
+        .progress-bar-state-names{
+            bottom: -5rem !important;
+            p{
+                transform: rotate(-90deg) scaleX(-1);
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

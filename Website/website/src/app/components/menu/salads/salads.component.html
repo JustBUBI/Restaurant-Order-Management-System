@@ -1,0 +1,15 @@
+<section class="menu-category">
+    <div class="title">Salads</div>
+    <app-menu-item *ngFor="let product of products" [product]="product"></app-menu-item>
+</section>
+
+<section class="images" fxLayout="row" fxLayout.lt-sm="column">
+    <div fxLayout="row">
+        <img class="category-img" src="../../../../website/assets/images/menu/salad1.jpg">
+        <img class="category-img" src="../../../../website/assets/images/menu/salad2.jpg">
+    </div>
+    <div fxLayout="row">
+        <img class="category-img" src="../../../../website/assets/images/menu/salad3.jpg">
+        <img class="category-img" src="../../../../website/assets/images/menu/salad4.jpg">
+    </div>
+</section>

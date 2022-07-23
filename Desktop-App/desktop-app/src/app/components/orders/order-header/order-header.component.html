@@ -1,0 +1,12 @@
+<div class="z-10 flex relative items-center w-full justify-between pb-16">
+    <div class="flex flex-col text-gray-800 mr-6 flex-shrink-0">
+        <span class="font-semibold text-2xl">Orders</span>
+        <span class="text-base">Here are all of your orders!</span>
+    </div>
+
+    <div class="flex w-full mx-6">
+        <input type="number" placeholder="Search order by ID" [ngModel]="orderNumber" (ngModelChange)="filterOrderById($event)"
+         class="px-4 py-2 shadow-lg w-full focus:outline-none focus:ring rounded"/>
+    </div>
+    <app-orders-status-filtering></app-orders-status-filtering>
+</div>

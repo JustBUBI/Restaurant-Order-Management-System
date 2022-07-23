@@ -1,0 +1,25 @@
+<div class="form-wrapper" fxLayout="column">
+    <h2>Payment Details</h2>
+    <form [formGroup]="paymentDetailsForm" fxLayout="column" fxLayoutGap="1.5rem" fxFill>
+        <div>
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" formControlName="cardNumber">
+        </div>
+        <div>
+            <label for="cardholder">Cardholder Name:</label>
+            <input type="text" id="cardholder" formControlName="cardholder">
+        </div>
+        <div fxLayout="row" fxLayoutGap="2rem">
+            <div fxFlex="70">
+                <label for="expDate">Expity Date:</label>
+                <input type="text" id="expDate" formControlName="expDate" placeholder="MM/YYYY">
+            </div>
+            <div fxFlex="30">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" formControlName="cvv">
+            </div>
+        </div>
+    </form>
+    <a class="link back" *ngIf="onMobile" (click)="goBack()">Back to cart</a>
+    <button class="btn-primary" (click)="pay()">Pay</button>
+</div>

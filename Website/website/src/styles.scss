@@ -1,0 +1,219 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$website-primary: mat-palette($mat-indigo);
+$website-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$website-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$website-theme: mat-light-theme((
+  color: (
+    primary: $website-primary,
+    accent: $website-accent,
+    warn: $website-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($website-theme);
+
+@import "./assets/fonts/fonts.scss";
+
+// regular style toast
+@import '~ngx-toastr/toastr';
+
+
+@import "variables";
+
+// General elements
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    &:focus{
+        outline: none;
+    }
+}
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+h2{
+    font-weight: 400;
+}
+a{
+    text-decoration: none;
+    color: $primary-dark;
+}
+input,textarea{
+    width: 100%;
+    padding: .5rem .7rem;
+    font-size: 1.2rem;
+    border-radius: .5rem;
+    border: 1px solid rgb(202, 202, 202);
+    resize: none;
+}
+form{
+    width: 90%;
+    max-width: 30rem;
+    label{
+        font-weight: 300;
+    }
+}
+
+
+// Material
+mat-icon.icon{
+    color: #fff;
+    font-size: 2rem;
+}
+.custom-dialog .mat-dialog-container{
+    width: 60vw;
+    max-width: 1200px;
+    height: 60vh;
+    max-height: 800px;
+    border-radius: 0;
+    padding: 0;
+}
+.backdropBackground{
+    background-color: rgb(0,0,0,.9);
+}
+
+
+// Custom classes
+.container{
+    padding: 5rem 10%;
+}
+.title{
+    font-family: 'Papyrus';
+    font-size: 4.25rem;
+}
+.btn-primary{
+    border: none;
+    background-color: $primary-dark;
+    color: #fff;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    &:hover{
+        background-color: $primary-dark-hover;
+    }
+}
+.btn-light{
+    background-color: transparent;
+    border: 3px solid #fff;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    &:hover{
+        background-color: transparent;
+    }
+}
+.spacer{
+    height: 1rem;
+}
+.icon{
+    width: 2rem;
+}
+.spacer-basic{
+    margin-top: 1rem;
+    width: 8rem;
+    height: .4rem;
+    background-color: #fff;
+}
+.img{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.header-image{
+    height: 40vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 3rem;
+    color: #fff;
+}
+.top-spacing{
+    padding-top: calc(12vh + 5rem);
+    min-height: 40vh;
+}
+.link{
+    color: $primary-dark;
+    cursor: pointer;
+
+    &:hover{
+        color: $primary-dark-hover;
+    }
+}
+.selectable:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+// Scrollbar
+::-webkit-scrollbar {
+    width: 0;
+}
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: $primary-light;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: $primary-dark;
+}
+
+
+
+@media screen and (max-width: 1500px){
+    .custom-dialog .mat-dialog-container{
+        width: 90vw;
+    }
+}
+@media screen and (max-width: 1280px){
+    .title{
+        font-size: 3rem;
+    }
+    .custom-dialog .mat-dialog-container{
+        height: 90vh;
+    }
+}
+@media screen and (max-width: 960px){
+    .title{
+        font-size: 2rem;
+    }
+    .icon{
+        width: 1.6rem;
+    }
+}
+@media screen and (max-width: 600px){
+    .title{
+        font-size: 2rem;
+    }
+    .btn-light{
+        padding: .7rem 2rem;
+        letter-spacing: .1rem;
+        font-size: .8rem;
+    }
+}

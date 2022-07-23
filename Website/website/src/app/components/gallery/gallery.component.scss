@@ -1,0 +1,34 @@
+.header-image{
+    background-image: url("../../../assets/images/gallery-header.jpg");
+}
+
+section{
+    padding: 2rem 10%;
+    
+    .group{
+        width: 100%;
+
+        .img{
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        
+            &::after{
+                content: "";
+                display: block;
+                padding-top: 75%;
+            }
+        }
+    }
+}
+.btn-primary{
+    max-width: 200px;
+    margin: 5rem 0 3rem 0;
+}
+
+@media screen and (max-width: 1200px){
+    section{
+        padding: 2rem 5%;
+    }
+}
